@@ -1,0 +1,19 @@
+.header::before {
+    position: absolute;
+    content: "";
+    top: 65%;
+    left: 40%;
+    height: .7rem;
+    width: 5%;
+    background-color: rgb(255, 123, 71);
+    z-index: -1;
+}
+
+.book-btn {
+    border: 1px solid rgb(255, 123, 71);
+}
+
+.book-btn:hover {
+    background-color: rgb(255, 123, 71);
+    color: #fff;
+}
