@@ -2,3 +2,10 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+.myColor {
+    color: rgb(255, 123, 71);
+}
+
+.myBgColor {
+    background-color: rgb(255, 123, 71);;
+}

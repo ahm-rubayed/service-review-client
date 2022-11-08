@@ -12,8 +12,8 @@
 }
 
 .explore-btn::before {
-  background: #fff;
-  color: #111 !important;
+  background: rgb(255, 123, 71);
+  display: block;
   content: "";
   position: absolute;
   top: 50%;
@@ -26,9 +26,6 @@
   transition: all 0.3s ease;
 }
 
-.explore-btn:hover {
-  color: #111;
-}
 .explore-btn:hover::before {
   height: 100%;
 }
