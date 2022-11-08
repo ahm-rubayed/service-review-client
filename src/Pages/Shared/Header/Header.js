@@ -11,10 +11,10 @@ const Header = () => {
     </>
 
   return (
-    <div className="navbar fixed top-0">
+    <div className="navbar fixed top-0 container mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <label tabIndex={0} className="btn btn-ghost btn-circle text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
