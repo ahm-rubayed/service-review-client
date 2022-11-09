@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/login.jpg";
@@ -5,8 +6,10 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import "./Login.css";
 
 const Login = () => {
-    const {logIn} = useContext(AuthContext)
+    const {logIn, googleLogIn} = useContext(AuthContext)
     const [error, setError] = useState('')
+
+    const googleProvider = new GoogleAuthProvider()
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -28,6 +31,17 @@ const Login = () => {
             navigate(from, {replace: true})
         })
         .catch(err => setError(err.message))
+    }
+
+    const handleGoogleLogIn = () => {
+      googleLogIn(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        setError("")
+        navigate(from, {replace: true})
+      })
+      .catch(err => setError(err.message))
     }
   return (
     <div className="grid grid-cols-2 my-28 items-center max-w-screen-lg mx-auto">
@@ -63,6 +77,7 @@ const Login = () => {
               className="mt-8 py-2 rounded-full myBgColor text-white cursor-pointer"/>
           </div>
         </form>
+        <button onClick={handleGoogleLogIn} className="border-2 mt-6 py-2 rounded-full w-full max-w-xs">Google</button>
         <p className="mt-5">
           Don't have an account? <Link to='/register' className="underline"> Regsiter</Link>
         </p>
