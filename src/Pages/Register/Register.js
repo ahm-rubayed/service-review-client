@@ -3,8 +3,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/login.jpg";
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+  useTitle("register")
     const {createUser, googleLogIn} = useContext(AuthContext)
     const [error, setError] = useState("")
 

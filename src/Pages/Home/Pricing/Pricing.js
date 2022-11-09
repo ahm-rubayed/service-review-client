@@ -7,7 +7,7 @@ const Pricing = () => {
         <div className='bg-gray-100 py-16 my-28'>
         <div className='max-w-screen-lg mx-auto '>
             <div className='relative header'>
-            <h2 className="text-4xl font-semibold text-center">Choose Your Package</h2>
+            <h2 className="text-4xl font-semibold text-center">Choose Your <span className="myColor">Package</span></h2>
             </div>
             <div className="grid grid-cols-3 my-16 justify-center items-center mx-auto text-center">
                 <div className='justify-self-center bg-white py-12 px-28 rounded-lg shadow-lg'>

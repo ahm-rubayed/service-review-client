@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import man from "../../../assets/man.webp"
+import useTitle from "../../../hooks/useTitle";
 import "./About.css"
 
 const About = () => {
+  useTitle("about")
   return (
     <div className="max-w-screen-lg mx-auto my-28">
       <div className="grid grid-cols-2 items-center">
