@@ -11,7 +11,7 @@ const About = () => {
           <h2 className="text-5xl">Hassle-Free Drone <br /> Photography</h2>
           <p className="text-lg my-6 w-4/5">Inasfa reprehenderit in voluptate velit esse cillum reeut cupidatatfug nulla pariatur.</p>
           <p className="text-lg w-4/5">Aute irure dolor inasfa reprehenderit in voluptate velit esse cillum reeut cupidatatfug nulla pariatur. Excepteur sintxsdfas occaecat.</p>
-          <button className="about-btn transition duration-300 ease-in-out mt-8 border-2 py-2 px-5 hover:text-white"><Link>Explore Services</Link></button>
+          <button className="about-btn transition duration-300 ease-in-out mt-8 border-2 py-2 px-5 text-white bg-black"><Link>Explore Services</Link></button>
         </div>
         <div>
             <img src={man} alt="" className="rounded-lg" />

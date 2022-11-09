@@ -26,6 +26,10 @@
   transition: all 0.3s ease;
 }
 
+.explore-btn:hover {
+  color: #fff;
+}
+
 .explore-btn:hover::before {
   height: 100%;
 }
