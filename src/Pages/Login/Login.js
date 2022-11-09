@@ -17,7 +17,7 @@ const Login = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              type="emai"
+              type="email"
               placeholder="Enter your email"
               className="input input-border w-full max-w-xs focus:outline-none"/>
           </div>
@@ -36,7 +36,7 @@ const Login = () => {
           </div>
         </form>
         <p className="mt-5">
-          Don't have an account? <Link className="underline"> Regsiter</Link>
+          Don't have an account? <Link to='/register' className="underline"> Regsiter</Link>
         </p>
       </div>
     </div>
