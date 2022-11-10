@@ -1,7 +1,8 @@
 import React from "react";
 
-const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate }) => {
+const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate, status }) => {
   const { _id, reviewField } = reviews;
+  console.log(_id)
 
   return (
     <div>
@@ -29,7 +30,7 @@ const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate }) => {
           <br />
         </td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button  onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
         </th>
       </tr>
     </div>

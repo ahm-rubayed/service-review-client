@@ -43,7 +43,7 @@ const Register = () => {
       .catch(err => setError(err.message))
     }
     return (
-        <div className="grid grid-cols-2 my-28 items-center max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 px-14 md:px-0 justify-items-center my-28 items-center max-w-screen-lg mx-auto">
         <div>
           <img src={login} alt="" />
         </div>

@@ -45,26 +45,26 @@ const MyReviews = () => {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("proShoot-token")}`,
+        authorization: `Bearer ${localStorage.getItem("proShoot")}`,
       },
       body: JSON.stringify({ status: "Approved" }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount > 0) {
-          const remaining = myreview.filter((odr) => odr._id !== id);
-          const approving = myreview.find((odr) => odr._id === id);
+        if (data.matchedCount > 0) {
+          const remaining = myreview.filter((review) => review._id !== id);
+          const approving = myreview.find((review) => review._id === id);
           approving.status = "Approved";
 
-          const newOrders = [approving, ...remaining];
-          setMyreview(newOrders);
+          const newReview = [approving, ...remaining];
+          setMyreview(newReview);
         }
       });
   };
 
   return (
-    <div className="overflow-x-auto my-32 max-w-screen-md mx-auto ">
+    <div className="overflow-x-auto my-32 max-w-screen-md mx-auto px-14 md:px-0">
       <table className="table w-full">
         <thead>
           <tr>

@@ -5,7 +5,7 @@ const Blog = () => {
   useTitle("blog");
 
   return (
-    <div className="max-w-screen-md mx-auto my-32">
+    <div className="max-w-screen-md px-12 md:px-0 mx-auto my-32">
       <div
         tabIndex={0}
         className="mt-4 transition duration-150 ease-linear collapse collapse-plus border border-base-300 bg-base-100 rounded-box"

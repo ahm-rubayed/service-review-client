@@ -35,7 +35,7 @@ const AddService = () => {
       <h2 className="text-4xl font-semibold text-center">
         Add Your <span className="myColor">Service</span>
       </h2>
-      <form onSubmit={handleOnSubmit} className="grid grid-cols-2 mt-16">
+      <form onSubmit={handleOnSubmit} className="grid grid-cols-1 md:grid-cols-2 justify-items-center mt-16">
         <div className="form-control ">
           <label className="label">
             <span className="label-text">Service Title</span>
@@ -50,7 +50,7 @@ const AddService = () => {
             />
           </label>
         </div>
-        <div className="form-control">
+        <div className="form-control mt-6 md:mt-6">
           <label className="label">
             <span className="label-text">Service Description</span>
           </label>

@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <div className="banner">
       <div className="overlay">
-        <div className="text-white text-center absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4">
+        <div className="text-white pt-48 text-center lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-2/4 lg:-translate-y-2/4">
           <h1 className="text-6xl font-semibold leading-tight ">
             Drone Photography and Videography
           </h1>

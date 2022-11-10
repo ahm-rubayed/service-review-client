@@ -14,7 +14,7 @@ const CustomService = () => {
       <h2 className="text-4xl font-semibold text-center">
         Your <span className="myColor">Services</span>
       </h2>
-      <div className="grid grid-cols-3 gap-4 container px-16 my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center my-16">
         {addService.map((service) => (
           <CustomServiceRow service={service}></CustomServiceRow>
         ))}

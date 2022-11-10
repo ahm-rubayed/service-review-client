@@ -9,7 +9,7 @@ const Pricing = () => {
             <div className='relative header'>
             <h2 className="text-4xl font-semibold text-center">Choose Your <span className="myColor">Package</span></h2>
             </div>
-            <div className="grid grid-cols-3 my-16 justify-center items-center mx-auto text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-16 justify-center items-center mx-auto text-center">
                 <div className='justify-self-center bg-white py-12 px-28 rounded-lg shadow-lg'>
                     <h3 className="text-3xl font-semibold">Weeding</h3>
                     <small className='block'>Attend only first day</small>

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 import ReviewItem from "./ReviewItem";
 
 const RigthSidebar = () => {
   const [reviews, setReviews] = useState([]);
+  const {logOut} = useContext(AuthContext)
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews`, {
@@ -10,9 +12,14 @@ const RigthSidebar = () => {
         authorization: `Bearer ${localStorage.getItem("proShoot")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if(res.status === 403) {
+          return []
+        }
+      return res.json();
+      })
       .then((data) => setReviews(data));
-  }, [reviews]);
+  }, [reviews, logOut]);
 
   return (
     <div>
