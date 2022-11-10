@@ -17,7 +17,7 @@ const Review = () => {
       email: user.email
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://proshoot-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         authorization: `Bearer ${localStorage.getItem('proShoot')}`,

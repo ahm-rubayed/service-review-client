@@ -4,7 +4,7 @@ import CustomServiceRow from "./CustomServiceRow";
 const CustomService = () => {
   const [addService, setAddService] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/addservice")
+    fetch("https://proshoot-server.vercel.app/addservice")
       .then((res) => res.json())
       .then((data) => setAddService(data));
   }, [addService]);

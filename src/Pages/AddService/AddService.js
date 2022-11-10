@@ -12,7 +12,7 @@ const AddService = () => {
             desc
         }
 
-        fetch('http://localhost:5000/addservice',{
+        fetch('https://proshoot-server.vercel.app/addservice',{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'

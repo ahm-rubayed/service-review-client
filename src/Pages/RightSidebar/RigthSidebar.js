@@ -7,7 +7,7 @@ const RigthSidebar = () => {
   const {logOut} = useContext(AuthContext)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews`, {
+    fetch(`https://proshoot-server.vercel.app/reviews`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("proShoot")}`,
       },

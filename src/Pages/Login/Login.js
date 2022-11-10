@@ -33,7 +33,7 @@ const Login = () => {
           email: user.email,
         };
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://proshoot-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -63,7 +63,7 @@ const Login = () => {
 
         console.log(currentUser)
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://proshoot-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -80,11 +80,11 @@ const Login = () => {
       .catch((err) => setError(err.message));
   };
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 px-14 md:px-0 justify-items-center my-28 items-center max-w-screen-lg mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 px-14 md:px-0 justify-items-center md:justify-items-start my-28 items-center max-w-screen-lg mx-auto">
       <div>
         <img src={login} alt="" />
       </div>
-      <div className="">
+      <div className="w-full">
         <h2 className="text-2xl mt-6">Welcome to ProShoot</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-control w-full max-w-xs mt-6">

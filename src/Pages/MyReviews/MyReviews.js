@@ -7,7 +7,7 @@ const MyReviews = () => {
   const [myreview, setMyreview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://proshoot-server.vercel.app/reviews?email=${user?.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('proShoot')}`
         }
@@ -26,7 +26,7 @@ const MyReviews = () => {
       "Are you sure, you want to delete your review?"
     );
     if (procced) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://proshoot-server.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -41,7 +41,7 @@ const MyReviews = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/reviews/${id}`, {
+    fetch(`https://proshoot-server.vercel.app/reviews/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
