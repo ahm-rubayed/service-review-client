@@ -6,11 +6,20 @@ const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   const [myreview, setMyreview] = useState([]);
 
-  console.log(myreview)
+  console.log(myreview);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('proShoot')}`
+        }
+    })
+    .then(res => {
+        if (res.status === 401 || res.status === 403) {
+            return logOut();
+        }
+        return res.json();
+    })
       .then((data) => setMyreview(data));
   }, [user?.email, logOut]);
 
@@ -24,13 +33,36 @@ const MyReviews = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-            if (data.deletedCount > 0) {
-                alert('deleted successfully');
-                const remaining = myreview.filter(odr => odr._id !== id);
-                setMyreview(remaining);
-            }
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+            const remaining = myreview.filter((odr) => odr._id !== id);
+            setMyreview(remaining);
+          }
         });
     }
+  };
+
+  const handleStatusUpdate = (id) => {
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("proShoot-token")}`,
+      },
+      body: JSON.stringify({ status: "Approved" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          const remaining = myreview.filter((odr) => odr._id !== id);
+          const approving = myreview.find((odr) => odr._id === id);
+          approving.status = "Approved";
+
+          const newOrders = [approving, ...remaining];
+          setMyreview(newOrders);
+        }
+      });
   };
 
   return (
@@ -42,14 +74,15 @@ const MyReviews = () => {
           </tr>
         </thead>
         <tbody>
-            {
-                myreview.map(review => <ReviewRow
-                    key={review._id}
-                    reviews={review}
-                    user={user}
-                    handleDelete={handleDelete}
-                ></ReviewRow>)
-            }
+          {myreview?.map((review) => (
+            <ReviewRow
+              key={review._id}
+              reviews={review}
+              user={user}
+              handleDelete={handleDelete}
+              handleStatusUpdate={handleStatusUpdate}
+            ></ReviewRow>
+          ))}
         </tbody>
       </table>
     </div>

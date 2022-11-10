@@ -9,7 +9,6 @@ const CustomService = () => {
       .then((data) => setAddService(data));
   }, [addService]);
 
-  console.log(addService);
   return (
     <div>
       <h2 className="text-4xl font-semibold text-center">

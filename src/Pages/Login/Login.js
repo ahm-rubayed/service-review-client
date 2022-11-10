@@ -30,24 +30,24 @@ const Login = () => {
         setError("");
 
         const currentUser = {
-          email: user.email
-        }
+          email: user.email,
+        };
 
-        fetch('http://localhost:5000/jwt', {
-          method: 'POST',
+        console.log(currentUser)
+
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
           headers: {
-              'content-type': 'application/json'
+            "content-type": "application/json",
           },
-          body: JSON.stringify(currentUser)
-      })
-          .then(res => res.json())
-          .then(data => {
-              console.log(data);
-              localStorage.setItem('proShoot-token', data.token);
-              navigate(from, { replace: true });
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem('proShoot', data.token);
+            navigate(from, { replace: true });
           });
-
-
       })
       .catch((err) => setError(err.message));
   };
@@ -56,7 +56,7 @@ const Login = () => {
     googleLogIn(googleProvider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        console.log(user)
         setError("");
         navigate(from, { replace: true });
       })

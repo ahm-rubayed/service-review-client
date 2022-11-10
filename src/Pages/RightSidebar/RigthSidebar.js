@@ -3,9 +3,18 @@ import ReviewItem from "./ReviewItem";
 
 const RigthSidebar = () => {
   const [reviews, setReviews] = useState();
+
+  console.log(reviews)
+
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/reviews`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('proShoot')}`
+    }
+    })
+    .then(res => {
+        return res.json();
+    })
       .then((data) => setReviews(data));
   }, [reviews]);
 

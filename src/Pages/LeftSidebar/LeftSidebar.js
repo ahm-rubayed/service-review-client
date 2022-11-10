@@ -16,9 +16,6 @@ const LeftSidebar = () => {
             <p className="text-gray-500">{description}</p>
             <p>Price - <span className="myColor">${price}</span></p>
             <div className="card-actions justify-end">
-              {/* <Link className="border py-2 px-8 mt-3 explore-btn text-center relative" to={`/services/${_id}`}>
-              Program Details
-            </Link> */}
             </div>
           </div>
         </div>
