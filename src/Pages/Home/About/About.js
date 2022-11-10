@@ -7,8 +7,8 @@ import "./About.css"
 const About = () => {
   useTitle("about")
   return (
-    <div className="px-11 lg:max-w-screen-lg mx-auto my-28">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+    <div className="px-11 md:px-0 lg:max-w-screen-lg mx-auto my-28">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center">
         <div>
           <h2 className="text-5xl">Hassle-Free Drone <br /> Photography</h2>
           <p className="text-lg my-6 w-4/5">Inasfa reprehenderit in voluptate velit esse cillum reeut cupidatatfug nulla pariatur.</p>
