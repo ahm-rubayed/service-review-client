@@ -15,7 +15,8 @@ const AddService = () => {
         fetch('https://proshoot-server.vercel.app/addservice',{
             method: 'POST',
             headers:{
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem("proShoot")}`
             },
             body: JSON.stringify(service)
         })
@@ -25,7 +26,6 @@ const AddService = () => {
             if(data.acknowledged){
                 alert('service placed successfully')
                 form.reset();
-                
             }
         })
         .catch(err => console.error(err))
@@ -64,7 +64,7 @@ const AddService = () => {
             />
           </label>
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className="btn myBgColor" />
       </form>
     </div>
   );
