@@ -4,6 +4,7 @@ import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Pricing from '../Pricing/Pricing';
 import useTitle from '../../../hooks/useTitle';
+import CustomService from '../CustomService/CustomService';
 
 const Home = () => {
     useTitle("home")
@@ -13,6 +14,7 @@ const Home = () => {
             <About></About>
             <Services></Services>
             <Pricing></Pricing>
+            <CustomService></CustomService>
         </div>
     );
 };

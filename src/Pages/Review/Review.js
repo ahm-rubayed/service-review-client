@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Review = () => {
@@ -14,6 +14,7 @@ const Review = () => {
       reviewField,
       userName: displayName,
       userImage: photoURL,
+      email: user.email
     };
 
     fetch("http://localhost:5000/reviews", {
