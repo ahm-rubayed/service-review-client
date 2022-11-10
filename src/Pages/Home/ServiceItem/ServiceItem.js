@@ -15,7 +15,7 @@ const ServiceItem = ({ service }) => {
           {description.length > 100 ? (
             <>
               {description.slice(0, 100) + "..."}
-              <Link className="underline">Read More</Link>
+              <Link to={`/services/${_id}`} className="underline myColor">Read More</Link>
             </>
           ) : (
             description

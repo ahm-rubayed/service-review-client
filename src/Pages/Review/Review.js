@@ -20,7 +20,7 @@ const Review = () => {
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
-        authorization: `Bearer ${localStorage.getItem("proShoot")}`,
+        authorization: `Bearer ${localStorage.getItem('proShoot')}`,
         "content-type": "application/json",
       },
       body: JSON.stringify(reviewData),
