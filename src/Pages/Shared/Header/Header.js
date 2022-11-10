@@ -73,13 +73,13 @@ const Header = () => {
                 tabIndex={0}
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                 <li>
-                  <Link className="justify-between">
-                    Profile
+                  <Link to="/myreviews" className="justify-between">
+                    My Reviews
                     <span className="badge">New</span>
                   </Link>
                 </li>
                 <li>
-                  <Link>Settings</Link>
+                  <Link to="/addservice">Add Service</Link>
                 </li>
                 <li>
                   <button onClick={handleLogOut}>Logout</button>
