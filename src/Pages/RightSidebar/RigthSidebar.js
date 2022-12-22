@@ -22,7 +22,7 @@ const RigthSidebar = () => {
   }, [reviews, logOut]);
 
   return (
-    <div>
+    <div className="lg:mt-16">
       <h2 className="text-4xl font-semibold text-center">
         Happy <span className="myColor">Client</span>
       </h2>

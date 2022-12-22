@@ -52,7 +52,7 @@ const Review = () => {
             <input
               type="submit"
               value="Submit"
-              className="btn myBgColor text-end border-0 flex justify-end"
+              className="btn myBgColor text-end border-0 flex justify-end mt-3"
             />
           </form>
         </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrashAlt } from "react-icons/fa";
 
 const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate, status }) => {
   const { _id, reviewField } = reviews;
@@ -10,8 +11,8 @@ const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate, status }) 
           <label>
             <button
               onClick={() => handleDelete(_id)}
-              className="btn btn-ghost btn-xs">
-              X
+              className="btn btn-ghost btn-lg hover:rounded-full rounded-full">
+              <FaTrashAlt/>
             </button>
           </label>
         </th>
@@ -29,7 +30,7 @@ const ReviewRow = ({ reviews, handleDelete, user, handleStatusUpdate, status }) 
           <br />
         </td>
         <th>
-          <button  onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'update'}</button>
+          {/* <button  onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'update'}</button> */}
         </th>
       </tr>
     </div>

@@ -5,7 +5,7 @@ import RigthSidebar from '../RightSidebar/RigthSidebar';
 
 const ServiceDetails = () => {
   return (
-    <div className='grid grid-cols-1 justify-items-center max-w-screen-lg mx-auto my-28'>
+    <div className='grid grid-cols-1 justify-items-center max-w-screen-lg mx-auto mb-28'>
       <LeftSidebar></LeftSidebar>
       <Review></Review>
       <RigthSidebar></RigthSidebar>

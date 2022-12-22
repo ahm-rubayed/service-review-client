@@ -27,7 +27,7 @@ const ServiceItem = ({ service }) => {
             description
           )}
         </p>
-        <p>Price {price}</p>
+        <p>Price ${price}</p>
         <div className="card-actions justify-end">
           <Link
             className="border py-2 px-8 mt-3 explore-btn text-center relative"

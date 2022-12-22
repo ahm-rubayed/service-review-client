@@ -26,16 +26,16 @@ const Header = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/" className="nav-item hover:text-white">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about" className="nav-item hover:text-white">About</Link>
       </li>
       <li>
-        <Link to="/services">Services</Link>
+        <Link to="/services" className="nav-item hover:text-white">Services</Link>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog" className="nav-item hover:text-white">Blog</Link>
       </li>
     </>
   );
@@ -50,19 +50,18 @@ const Header = () => {
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
+                d="M4 6h16M4 12h16M4 18h7"/>
             </svg>
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 
+            rounded-box w-52">
             {menuItems}
           </ul>
         </div>
@@ -83,12 +82,11 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-              >
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content 
+                bg-base-100 rounded-box w-52">
                 <li>
                   <Link to="/myreviews" className="justify-between">
                     My Reviews
-                    <span className="badge">New</span>
                   </Link>
                 </li>
                 <li>

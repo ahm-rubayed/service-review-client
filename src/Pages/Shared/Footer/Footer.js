@@ -18,19 +18,19 @@ const Footer = () => {
       <div className="lg:justify-self-end">
         <span className="text-2xl myColor">Navigation</span>
         <ul>
-            <li className="my-3">Home</li>
-            <li className="my-3">About</li>
-            <li className="my-3">Services</li>
-            <li className="my-3">Blogs</li>
+            <li className="my-3 cursor-pointer">Home</li>
+            <li className="my-3 cursor-pointer">About</li>
+            <li className="my-3 cursor-pointer">Services</li>
+            <li className="my-3 cursor-pointer">Blogs</li>
         </ul>
       </div>
       <div className="lg:justify-self-end">
         <span className="text-2xl myColor">Services</span>
         <ul>
-            <li className="my-3">Drone Mapping</li>
-            <li className="my-3">Real State</li>
-            <li className="my-3">Commercial</li>
-            <li className="my-3">Weeding</li>
+            <li className="my-3 cursor-pointer">Drone Mapping</li>
+            <li className="my-3 cursor-pointer">Real State</li>
+            <li className="my-3 cursor-pointer">Commercial</li>
+            <li className="my-3 cursor-pointer">Weeding</li>
         </ul>
       </div>
       <div className="lg:justify-self-end">

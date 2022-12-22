@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import ReviewRow from "../../ReviewRow";
+import toast from "react-hot-toast";
+import swal from "sweetalert";
 
 const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -8,36 +10,43 @@ const MyReviews = () => {
 
   useEffect(() => {
     fetch(`https://proshoot-server.vercel.app/reviews?email=${user?.email}`, {
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('proShoot')}`
-        }
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("proShoot")}`,
+      },
     })
-    .then(res => {
+      .then((res) => {
         if (res.status === 401 || res.status === 403) {
-            return logOut();
+          return logOut();
         }
         return res.json();
-    })
+      })
       .then((data) => setMyreview(data));
   }, [user?.email, logOut]);
 
   const handleDelete = (id) => {
-    const procced = window.confirm(
-      "Are you sure, you want to delete your review?"
-    );
-    if (procced) {
-      fetch(`https://proshoot-server.vercel.app/reviews/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = myreview.filter((odr) => odr._id !== id);
-            setMyreview(remaining);
-          }
-        });
-    }
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(`https://proshoot-server.vercel.app/reviews/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              toast.success("deleted successfully");
+              const remaining = myreview.filter((odr) => odr._id !== id);
+              setMyreview(remaining);
+            }
+});
+      } else {
+        swal("Review hasn't deleted");
+      }
+    });
   };
 
   const handleStatusUpdate = (id) => {

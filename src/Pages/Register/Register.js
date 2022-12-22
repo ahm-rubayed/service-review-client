@@ -25,10 +25,22 @@ const Register = () => {
 
         createUser(email, password)
         .then(result => {
-            const user = result.user;
-            setError("")
-            form.reset()
-            navigate(from, {replace: true})
+          fetch("https://proshoot-server.vercel.app/jwt", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(result),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              localStorage.setItem('proShoot', data.token);
+              setError("")
+              form.reset()
+              navigate(from, { replace: true });
+            });
+          
         })
         .catch(err => setError(err.message))
     }

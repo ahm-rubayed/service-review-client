@@ -6,3 +6,8 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
+
+  .nav-item:hover,
+  .nav-item:focus {
+    background: #FF7B47;
+  }
