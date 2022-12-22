@@ -1,9 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png.webp";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import "./Header.css"
 
 const Header = () => {
+  const [navbar, setNavbar] = useState(false)
+
+  const changeBg = () => {
+    if(window.scrollY >= 20) {
+      setNavbar(true)
+    }
+    else {
+      setNavbar(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeBg)
+
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -27,16 +41,17 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar fixed top-0 z-50 myBgColor">
+    <nav className={navbar ? 'navbar active myBgColor fixed top-0 z-10 h-6 w-screen px-6' : 'navbar fixed top-0 z-10 h-6 w-screen px-6'}>
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle text-white">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor">
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -68,7 +83,8 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              >
                 <li>
                   <Link to="/myreviews" className="justify-between">
                     My Reviews
@@ -85,10 +101,12 @@ const Header = () => {
             </div>
           </>
         ) : (
-          <Link to="/login" className="text-white pr-6">Login</Link>
+          <Link to="/login" className="text-white pr-6">
+            Login
+          </Link>
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -31,8 +31,7 @@ const ServiceItem = ({ service }) => {
         <div className="card-actions justify-end">
           <Link
             className="border py-2 px-8 mt-3 explore-btn text-center relative"
-            to={`/services/${_id}`}
-          >
+            to={`/services/${_id}`}>
             Program Details
           </Link>
         </div>
